@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int currsum=0;
+int maxsum=INT32_MIN;
+int subarr(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        currsum=currsum+arr[i];
+        if(maxsum<currsum)
+        {
+        maxsum=currsum;
+        }
+        if(currsum<0)
+        {
+            currsum=0;
+        }//1 2 7 -4 3 2 -10 9 1
+    }
+    return maxsum;
+}
+
+int main()
+{
+int arr1[100],n;
+cout<<"How many elements u want to add in array:";
+cin>>n;
+for(int i=0;i<n;i++)
+{
+cin>>arr1[i];
+}
+cout<<subarr(arr1,n);
+}
